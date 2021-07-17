@@ -69,9 +69,9 @@ const PostController = {
     },
     async getUserPost(req,res,next) {
         try{
-            let userId = req.params.id;
+            let usersId = req.params.id;
             const data = await PostService.getMany({
-                author: userId
+                author: usersId
             })
             res.status(200).json({
                 posts:data

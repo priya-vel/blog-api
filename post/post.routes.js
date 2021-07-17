@@ -9,8 +9,8 @@ const PostRoutes = Router();
 PostRoutes.post("/", Authorization, PostController.create);
 PostRoutes.get("/", PostController.getMany);
 PostRoutes.get("/:id", PostController.getOne);
-PostRoutes.get("/users:id", PostController.getUserPost);
-PostRoutes.delete("/:id", Authorization, PostController.delete)
+PostRoutes.get("/users/:id", PostController.getUserPost);
+PostRoutes.delete("/:id", Authorization, PostController.delete);
 
 
 module.exports = {
