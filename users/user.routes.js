@@ -4,7 +4,11 @@ const { Authorization } = require("../middlewares/Authorization");
 const { UserController } = require("./user.controllers");
 
 
-
+/**
+ * In this we can initializing post routes
+ *  @category Routes
+ * @subcategory UserRoutes
+ */
 const UserRoutes = Router();
 
 UserRoutes.post("/register",UserController.register);

@@ -3,8 +3,19 @@ const jwt = require("jsonwebtoken");
 const bcrypt = require('bcryptjs');
 
 
-
+/**
+ *  This object is used to interact with the users to create, read, update and delete the  users
+ *  @category Controllers
+ *  @subcategory UserControllers
+ */
 const UserController = {
+    /**
+     * Register user handler
+     * @param {ExpressRequest} req express request
+     * @param {ExpressResponse} res express response
+     * @param {ExpressNext} next express next function
+     * @returns {Promise<Void>}
+     */
     async register(req,res,next) {
         try{
             const body = req.body;
@@ -40,6 +51,9 @@ const UserController = {
         }
     },
     async login(req, res, next) {
+       /**
+        * login the users which is in the database
+        */
         try{
             let body = req.body;
             console.log(body);
@@ -67,6 +81,9 @@ const UserController = {
         }
     },
    async getAll(req,res,next) {
+       /**
+        * get all the users which is in the database
+        */
        try{
            console.log("get all user controller", req.user);
            const data = await UserService.getAllUser();
@@ -82,6 +99,9 @@ const UserController = {
        }
    },
     getMyData(req,res,next){
+        /**
+         * this is used to get only my datas
+         */
        let id = req.user._id;
        UserService.getOneUser({
            _id: id

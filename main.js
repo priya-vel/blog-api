@@ -1,10 +1,12 @@
-
 const express = require("express");
 const { json, urlencoded } = require("express");
 const { DBConnection } = require("./config/database");
 const { PostRoutes } = require("./post/post.routes");
 const { UserRoutes } = require("./users/user.routes");
 require('dotenv').config()
+/**
+ * This is used to give the database status where database is connected or not
+ */
 const app = express();
 
 DBConnection ().then((res) => {

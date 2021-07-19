@@ -2,9 +2,13 @@ const { Router } = require("express");
 const { PostController } = require("./post.controllers");
 const { Authorization } = require("../middlewares/Authorization");
 
-
-
+/**
+ * Initializing post routes
+ * @category Routes
+ * @subcategory PostRoutes
+ */
 const PostRoutes = Router();
+
 
 PostRoutes.post("/", Authorization, PostController.create);
 PostRoutes.get("/", PostController.getMany);

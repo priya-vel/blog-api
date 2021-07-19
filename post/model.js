@@ -2,8 +2,13 @@ const { model, Schema, SchemaTypes, } = require("mongoose");
 
 
 
-
+/**
+ * This object gives the structure of the user-post model
+ *  @category Models
+ * @subcategory PostModel
+ */
 const PostModel = model("Posts", Schema({
+   
     title:
     {
         type : String,

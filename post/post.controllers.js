@@ -1,8 +1,18 @@
 const { PostService } = require("./service");
 
 
-
+/**
+ *  This object is used to interact with the users  by create, read, update and delete the user-post
+ *  @category Controllers
+ * @subcategory PostControllers
+ */
 const PostController = {
+    /**
+     * 
+     * @param {String} title title for the post
+     * @param {String} body  body content for the post
+     * @param {String} author current logged in user who created the post
+     */
     async create(req, res, next) {
         try{
             let {title, body}= req.body;
